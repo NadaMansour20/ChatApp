@@ -6,12 +6,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class RegisterViewModel : BaseViewModel<NavigatorLog>() {
-    val first_name = ObservableField<String>("")
-    val first_nameError = ObservableField<String>("")
-
-    val last_name = ObservableField<String>("")
-    val last_nameError = ObservableField<String>("")
+class LoginViewModel : BaseViewModel<NavigatorLog>() {
 
     val email = ObservableField<String>("")
     val emailError = ObservableField<String>("")
@@ -21,29 +16,31 @@ class RegisterViewModel : BaseViewModel<NavigatorLog>() {
 
 
     private var auth: FirebaseAuth = Firebase.auth
-
-
-    fun add_account() {
+    fun login() {
         if (validate()) {
-            creatAccountToFirebase()
-
+            loginAccount()
         }
+
     }
 
-    private fun creatAccountToFirebase() {
+    fun open_register() {
+        navigator?.openRegisterActivity()
+    }
+
+    private fun loginAccount() {
 
         show_load_LiveData.value = true
-        auth.createUserWithEmailAndPassword(email.get()!!, password.get()!!)
+        auth.signInWithEmailAndPassword(email.get()!!, password.get()!!)
             .addOnCompleteListener { task ->
 
                 show_load_LiveData.value = false
 
                 if (!task.isSuccessful) {
-                    massegeLiveData.value = "failed registration"
+                    massegeLiveData.value = "failed login"
                     Log.e("firebase", "failed" + task.exception?.localizedMessage)
                 } else {
-                    massegeLiveData.value = "successfully registration"
-                    Log.e("firebase", "success registration")
+                    massegeLiveData.value = "successfully login"
+                    Log.e("firebase", "successful login")
                     navigator?.openHomeActivity()
 
                 }
@@ -52,18 +49,7 @@ class RegisterViewModel : BaseViewModel<NavigatorLog>() {
 
     fun validate(): Boolean {
         var flag = true
-        if (first_name.get().isNullOrBlank()) {
-            first_nameError.set("Please enter first_name")
-            flag = false
-        } else {
-            first_nameError.set(null)
-        }
-        if (last_name.get().isNullOrBlank()) {
-            last_nameError.set("Please enter last_name")
-            flag = false
-        } else {
-            last_nameError.set(null)
-        }
+
         if (email.get().isNullOrBlank()) {
             emailError.set("Please enter email")
             flag = false

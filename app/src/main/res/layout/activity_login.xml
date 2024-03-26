@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="vmR"
-            type="com.android.chatapp.RegisterViewModel" />
+            name="vmL"
+            type="com.android.chatapp.LoginViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -29,13 +29,12 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/account"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/account"
+                        android:text="@string/login"
                         android:textColor="@color/pink_dark"
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -51,42 +50,27 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
                 android:orientation="vertical"
                 android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/firstname"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="10dp"
-                    app:error="@{vmR.first_nameError}">
+                    app:error="@{vmL.emailError}">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/first_name"
-                        android:text="@={vmR.first_name}" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/lastname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="10dp"
-                    app:error="@{vmR.last_nameError}">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/last_name"
-                        android:text="@={vmR.last_name}" />
+                        android:hint="@string/email"
+                        android:text="@={vmL.email}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,42 +79,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="10dp"
-                    app:error="@{vmR.emailError}">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/email"
-                        android:text="@={vmR.email}" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="10dp"
-                    app:error="@{vmR.passwordError}">
+                    app:error="@{vmL.passwordError}">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
-                        android:text="@={vmR.password}" />
+                        android:text="@={vmL.password}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/button_creat_account"
+                    android:id="@+id/button_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:backgroundTint="@color/pink_dark"
-                    android:onClick="@{()->vmR.add_account()}"
-                    android:text="Creat Account"
+                    android:onClick="@{()->vmL.login()}"
+                    android:text="@string/login"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->vmL.open_register()}"
+                    android:text="@string/or_creat_my_acount"
                     android:textSize="20sp" />
 
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
