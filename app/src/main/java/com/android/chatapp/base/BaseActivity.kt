@@ -1,4 +1,4 @@
-package com.android.chatapp
+package com.android.chatapp.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +24,9 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
 
     }
 
+    abstract fun get_layout_id(): Int
+    abstract fun get_view_model(): VM
+
     fun subscribe_viewModel() {
         viewModel.massegeLiveData.observe(this, Observer {
 
@@ -33,6 +36,5 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
         })
     }
 
-    abstract fun get_layout_id(): Int
-    abstract fun get_view_model(): VM
+
 }

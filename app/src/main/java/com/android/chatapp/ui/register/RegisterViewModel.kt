@@ -1,12 +1,15 @@
-package com.android.chatapp
+package com.android.chatapp.register
 
 import android.util.Log
 import androidx.databinding.ObservableField
+import com.android.chatapp.base.BaseViewModel
+import com.android.chatapp.database.addUserToFirestore
+import com.android.chatapp.model.AppUser
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class RegisterViewModel : BaseViewModel<NavigatorLog>() {
+class RegisterViewModel : BaseViewModel<Navigator>() {
     val first_name = ObservableField<String>("")
     val first_nameError = ObservableField<String>("")
 
@@ -30,6 +33,8 @@ class RegisterViewModel : BaseViewModel<NavigatorLog>() {
         }
     }
 
+
+    // create authentication account
     private fun creatAccountToFirebase() {
 
         show_load_LiveData.value = true
@@ -44,10 +49,35 @@ class RegisterViewModel : BaseViewModel<NavigatorLog>() {
                 } else {
                     massegeLiveData.value = "successfully registration"
                     Log.e("firebase", "success registration")
-                    navigator?.openHomeActivity()
+
+                    //in order for the connection between the client to be logged in, it goes to whether this client was the register before or not
+                    addAccountToFirebase(task.result.user?.uid)
+
 
                 }
             }
+    }
+
+    // add new account in fire store(database)
+    private fun addAccountToFirebase(uid: String?) {
+
+        val user = AppUser(
+            id = uid,
+            firstname = first_name.get(),
+            lastname = last_name.get(),
+            email = email.get(),
+        )
+
+        addUserToFirestore(user, {
+            navigator?.openHomeActivity()
+
+
+        }, {
+            massegeLiveData.value = it.localizedMessage
+
+        })
+
+
     }
 
     fun validate(): Boolean {

@@ -7,7 +7,7 @@
 
         <variable
             name="vmL"
-            type="com.android.chatapp.LoginViewModel" />
+            type="com.android.chatapp.ui.login.LoginViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

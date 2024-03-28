@@ -1,6 +1,6 @@
-package com.android.chatapp
+package com.android.chatapp.ui.login
 
-interface NavigatorLog {
+interface Navigator {
     fun openHomeActivity()
     fun openRegisterActivity()
 }
