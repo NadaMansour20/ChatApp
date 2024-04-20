@@ -12,7 +12,9 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="paaword">Paaword</string>
     <string name="login">Login</string>
-    <string name="or_creat_my_acount">Or Creat My Acount</string>
+    <string name="or_create_my_account">Or Create My Account</string>
+    <string name="create_account">Create Account</string>
+    <string name="home">Home</string>
+    <string name="create_new_chat">Create New Chat</string>
 </resources>

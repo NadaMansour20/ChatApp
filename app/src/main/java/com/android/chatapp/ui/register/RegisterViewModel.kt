@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
 class RegisterViewModel : BaseViewModel<Navigator>() {
+
     val first_name = ObservableField<String>("")
     val first_nameError = ObservableField<String>("")
 
@@ -69,10 +70,14 @@ class RegisterViewModel : BaseViewModel<Navigator>() {
         )
 
         addUserToFirestore(user, {
+
+            //register successfully (OnSuccessListener)
             navigator?.openHomeActivity()
 
 
         }, {
+
+            // register failed  (OnFailureListener)
             massegeLiveData.value = it.localizedMessage
 
         })

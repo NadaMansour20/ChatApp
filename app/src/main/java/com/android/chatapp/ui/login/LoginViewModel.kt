@@ -59,7 +59,8 @@ class LoginViewModel : BaseViewModel<Navigator>() {
 
         signInToFirebase(uid!!, {
 
-            // toobject() convert return data -> (document) to appuser object
+            //(OnSuccessListener)
+            // to object() convert return data -> (document) to appUser object
             val user = it.toObject(AppUser::class.java)
             if (user == null) {
                 massegeLiveData.value = "Invalid email or Password"
@@ -69,6 +70,8 @@ class LoginViewModel : BaseViewModel<Navigator>() {
             }
 
         }, {
+
+            //(OnFailureListener)
             massegeLiveData.value = it.localizedMessage
 
         })

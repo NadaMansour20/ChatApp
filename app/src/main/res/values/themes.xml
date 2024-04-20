@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.ChatApp" parent="Base.Theme.ChatApp" />
+
+
+    <style name="FLOATINGBUTTON">
+        <item name="android:backgroundTint">@color/pink_dark</item>
+
+        <!-- color of ic_add-->
+        <item name="tint">@color/white</item>
+    </style>
 </resources>

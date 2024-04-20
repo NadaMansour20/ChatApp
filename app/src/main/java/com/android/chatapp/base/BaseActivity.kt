@@ -15,6 +15,7 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
 
         super.onCreate(savedInstanceState)
 
+        //dataBinding initial
         dataBinding = DataBindingUtil.setContentView(this, get_layout_id())
 
         viewModel = get_view_model()

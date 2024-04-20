@@ -16,11 +16,6 @@
         android:fitsSystemWindows="true"
         tools:context=".Ui.RegistrationActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
-
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -38,13 +33,12 @@
                         android:text="@string/account"
                         android:textColor="@color/pink_dark"
                         android:textSize="30sp"
+                        android:gravity="center"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.appbar.MaterialToolbar>
-
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -127,7 +121,7 @@
                     android:layout_margin="20dp"
                     android:backgroundTint="@color/pink_dark"
                     android:onClick="@{()->vmR.add_account()}"
-                    android:text="@string/creat_account"
+                    android:text="@string/create_account"
                     android:textSize="20sp" />
 
             </LinearLayout>
