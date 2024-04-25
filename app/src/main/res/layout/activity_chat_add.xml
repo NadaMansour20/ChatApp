@@ -7,7 +7,7 @@
 
         <variable
             name="vmC"
-            type="com.android.chatapp.ui.chat.ChatViewModel" />
+            type="com.android.chatapp.ui.add_chat.AddChatViewModel" />
 
     </data>
 
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/pink"
-        tools:context=".ui.chat.ChatActivity">
+        tools:context=".ui.add_chat.AddChatActivity">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -31,6 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
@@ -72,21 +73,19 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="@string/description"
                         android:lines="4"
+                        android:hint="Description"
                         android:maxLines="4"
                         android:text="@={vmC.Description}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="50dp"
                     android:backgroundTint="@color/pink_dark"
-                    android:onClick="@{()->vmC.create_chat()}"
                     android:text="@string/create_chat"
-                    android:textSize="20sp" />
-
+                    android:onClick="@{()->vmC.createChat()}"
+                    android:textSize="17sp" />
 
             </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.android.chatapp.base
+package com.android.chatapp.Uses
 
 import androidx.databinding.BindingAdapter
 import com.google.android.material.textfield.TextInputLayout
@@ -10,3 +10,4 @@ fun setError(TextInput: TextInputLayout, error: String?) {
     TextInput.error = error
 
 }
+

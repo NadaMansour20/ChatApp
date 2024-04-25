@@ -17,4 +17,6 @@
     <string name="create_account">Create Account</string>
     <string name="home">Home</string>
     <string name="create_new_chat">Create New Chat</string>
+    <string name="create_chat">Create Chat</string>
+    />
 </resources>

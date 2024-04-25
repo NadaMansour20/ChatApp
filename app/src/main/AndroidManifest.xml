@@ -14,8 +14,12 @@
         android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.chat.ChatActivity"
+            android:name=".ui.chat_now.ChatNowActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.add_chat.AddChatActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false" />
@@ -32,6 +36,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

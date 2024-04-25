@@ -1,4 +1,4 @@
-package com.android.chatapp.ui.chat
+package com.android.chatapp.ui.add_chat
 
 interface Navigator {
 

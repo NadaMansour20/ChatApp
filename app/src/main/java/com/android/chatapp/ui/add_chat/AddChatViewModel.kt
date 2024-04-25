@@ -1,4 +1,4 @@
-package com.android.chatapp.ui.chat
+package com.android.chatapp.ui.add_chat
 
 import android.util.Log
 import androidx.databinding.ObservableField
@@ -7,7 +7,7 @@ import com.android.chatapp.base.BaseViewModel
 import com.android.chatapp.database.add_Room
 import com.android.chatapp.model.Room
 
-class ChatViewModel : BaseViewModel<Navigator>() {
+class AddChatViewModel : BaseViewModel<Navigator>() {
 
     var RoomName = ObservableField<String>("")
     var RoomNameError = ObservableField<String>("")
@@ -16,10 +16,9 @@ class ChatViewModel : BaseViewModel<Navigator>() {
     var DescriptionError = ObservableField<String>("")
 
     var room_added = MutableLiveData<Boolean>()
-    fun create_chat() {
+    fun createChat() {
         if (validate()) {
             add_Room()
-            navigator?.openHomeActivity()
             Log.e("clickkkkkkkkkkk", "click")
         }
     }
@@ -32,6 +31,7 @@ class ChatViewModel : BaseViewModel<Navigator>() {
 
         add_Room(room, onSuccessListener = {
             room_added.value = true
+            navigator?.openHomeActivity()
 
 
         }, onFailureListener = {
@@ -40,6 +40,7 @@ class ChatViewModel : BaseViewModel<Navigator>() {
         })
 
     }
+
 
     fun validate(): Boolean {
         var flag = true

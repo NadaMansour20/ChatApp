@@ -1,4 +1,4 @@
-package com.android.chatapp.ui.chat
+package com.android.chatapp.ui.add_chat
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.android.chatapp.R
+import com.android.chatapp.Uses.OnItemListener
 import com.android.chatapp.databinding.ChatItemBinding
 import com.android.chatapp.model.Room
 
-class ChatAdapter : Adapter<ChatAdapter.ChatViewHolder>() {
+class AddChatAdapter(var list_item: List<Room?>?) : Adapter<AddChatAdapter.ChatViewHolder>() {
 
-    var list_item: List<Room>? = null
+    var On_item_listener: OnItemListener? = null
+
 
     class ChatViewHolder(var viewBinding: ChatItemBinding) : ViewHolder(viewBinding.root) {
         fun Binding(room: Room) {
@@ -38,7 +40,16 @@ class ChatAdapter : Adapter<ChatAdapter.ChatViewHolder>() {
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
 
-        holder.Binding(list_item!![position])
+        holder.Binding(list_item!![position]!!)
+
+        if (On_item_listener != null) {
+
+            //holder.itemView.setOnClickListener()
+
+            holder.viewBinding.root.setOnClickListener {
+                On_item_listener?.On_item_click(position, list_item!![position]!!)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -49,5 +60,6 @@ class ChatAdapter : Adapter<ChatAdapter.ChatViewHolder>() {
         list_item = room_item
         notifyDataSetChanged()
     }
+
 
 }
