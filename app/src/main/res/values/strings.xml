@@ -18,5 +18,7 @@
     <string name="home">Home</string>
     <string name="create_new_chat">Create New Chat</string>
     <string name="create_chat">Create Chat</string>
+    <string name="send">Send</string>
+    <string name="_3_00_pm">3:00 PM</string>
     />
 </resources>
