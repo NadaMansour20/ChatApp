@@ -4,4 +4,11 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="TEXTMESSAGE">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TEXTBUTTON">
+        <item name="android:textColor">@color/gray</item>
+    </style>
 </resources>

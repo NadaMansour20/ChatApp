@@ -55,7 +55,7 @@ class ChatNowAdapter : RecyclerView.Adapter<ViewHolder>() {
             val viewBinding: MassageSendBinding =
                 DataBindingUtil.inflate(
                     LayoutInflater.from(parent.context),
-                    R.layout.massage_receive, parent, false
+                    R.layout.massage_send, parent, false
                 )
             return SentMessageViewHolder(viewBinding)
 
@@ -76,5 +76,14 @@ class ChatNowAdapter : RecyclerView.Adapter<ViewHolder>() {
             holder.Binding(list_item[position]!!)
 
         }
+    }
+
+    //add collection of message to Aapter
+    fun appendMessage(listMessageAdded: MutableList<Message>) {
+        list_item.addAll(listMessageAdded)
+
+        //just notify adapter to update message sent not all old message  ,but notifyDataSetChanged was notify all adapter and change all data on  it
+        notifyItemRangeInserted(list_item.size,listMessageAdded.size)
+
     }
 }

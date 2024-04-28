@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -14,18 +15,19 @@
         android:layout_height="wrap_content">
 
 
+        <TextView
+            android:id="@+id/receive_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="@{receive_message.sender_name}"
+            android:textSize="15sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{receive_message.Sender_name}"
-                android:textSize="15sp" />
-
+            tool:layout_constraintTop_toBottomOf="@id/receive_name"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +36,7 @@
                 android:background="@drawable/receive_massage_shape"
                 android:padding="8dp"
                 android:text="@{receive_message.content}"
-                android:textColor="@color/gray_dark"
+                style="@style/TEXTMESSAGE"
                 android:textSize="17sp" />
 
 
@@ -43,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:text="@{receive_message.formate_date()}"
-                android:textColor="@color/black"
+                style="@style/TEXTBUTTON"
                 android:textSize="15sp" />
 
         </LinearLayout>
