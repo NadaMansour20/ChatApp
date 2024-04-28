@@ -2,6 +2,7 @@ package com.android.chatapp.ui.login
 
 import android.util.Log
 import androidx.databinding.ObservableField
+import com.android.chatapp.Uses.DataUtils
 import com.android.chatapp.base.BaseViewModel
 import com.android.chatapp.database.signInToFirebase
 import com.android.chatapp.model.AppUser
@@ -66,6 +67,7 @@ class LoginViewModel : BaseViewModel<Navigator>() {
                 massegeLiveData.value = "Invalid email or Password"
                 return@signInToFirebase
             } else {
+                DataUtils.use = user
                 navigator?.openHomeActivity()
             }
 

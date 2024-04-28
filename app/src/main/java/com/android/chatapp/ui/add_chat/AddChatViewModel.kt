@@ -1,6 +1,5 @@
 package com.android.chatapp.ui.add_chat
 
-import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import com.android.chatapp.base.BaseViewModel
@@ -19,7 +18,6 @@ class AddChatViewModel : BaseViewModel<Navigator>() {
     fun createChat() {
         if (validate()) {
             add_Room()
-            Log.e("clickkkkkkkkkkk", "click")
         }
     }
 

@@ -20,10 +20,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="50dp"
+            android:layout_margin="20dp"
             app:cardCornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -31,13 +28,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:layout_margin="15dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20sp"
                     android:gravity="center"
                     android:text="@string/create_new_chat"
                     android:textColor="@color/pink_dark"
@@ -45,20 +41,21 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/ic_group" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/group_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
                     app:error="@{vmC.RoomNameError}">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Room Name"
+                        android:hint="@string/room_name"
                         android:text="@={vmC.RoomName}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,14 +64,14 @@
                     android:id="@+id/group_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
                     app:error="@{vmC.DescriptionError}">
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:lines="4"
-                        android:hint="Description"
+                        android:hint="@string/description"
                         android:maxLines="4"
                         android:text="@={vmC.Description}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -84,8 +81,10 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/pink_dark"
                     android:text="@string/create_chat"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
                     android:onClick="@{()->vmC.createChat()}"
-                    android:textSize="17sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

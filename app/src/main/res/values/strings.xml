@@ -17,8 +17,11 @@
     <string name="create_account">Create Account</string>
     <string name="home">Home</string>
     <string name="create_new_chat">Create New Chat</string>
-    <string name="create_chat">Create Chat</string>
+    <string name="create_chat">Add Chat</string>
     <string name="send">Send</string>
     <string name="_3_00_pm">3:00 PM</string>
+    <string name="type_a_massage">Type a massage</string>
+    <string name="room_name">Room Name</string>
+    <string name="description">Description</string>
     />
 </resources>

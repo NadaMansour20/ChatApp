@@ -8,7 +8,7 @@ data class AppUser(
 
     ) {
     companion object {
-        const val CollectionName = "users"
+        const val CollectionNameAppUser = "users"
 
 
     }

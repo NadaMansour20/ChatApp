@@ -15,7 +15,4 @@
         <item name="tint">@color/white</item>
     </style>
 
-    <style name="BUTTON_SEND">
-        <item name="android:backgroundTint">@color/pink_dark</item>
-    </style>
 </resources>

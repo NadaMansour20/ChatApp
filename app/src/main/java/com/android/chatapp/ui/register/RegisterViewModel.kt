@@ -2,6 +2,7 @@ package com.android.chatapp.register
 
 import android.util.Log
 import androidx.databinding.ObservableField
+import com.android.chatapp.Uses.DataUtils
 import com.android.chatapp.base.BaseViewModel
 import com.android.chatapp.database.addUserToFirestore
 import com.android.chatapp.model.AppUser
@@ -72,6 +73,7 @@ class RegisterViewModel : BaseViewModel<Navigator>() {
         addUserToFirestore(user, {
 
             //register successfully (OnSuccessListener)
+            DataUtils.use = user
             navigator?.openHomeActivity()
 
 

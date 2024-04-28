@@ -1,6 +1,7 @@
 package com.android.chatapp.ui.chat_now
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.android.chatapp.R
 import com.android.chatapp.Uses.Constent
@@ -11,6 +12,7 @@ import com.android.chatapp.model.Room
 class ChatNowActivity : BaseActivity<ChatNowViewModel, ActivityChatNowBinding>(), Navigator {
 
     lateinit var room: Room
+    lateinit var room_name_text: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,6 +20,14 @@ class ChatNowActivity : BaseActivity<ChatNowViewModel, ActivityChatNowBinding>()
         dataBinding.vmCN = viewModel
 
         room = intent.getParcelableExtra(Constent.constent)!!
+
+
+        //set room that from home
+        viewModel.room = room
+
+        room_name_text = findViewById(R.id.room_name_text)
+        room_name_text.text = room.name
+
 
     }
 

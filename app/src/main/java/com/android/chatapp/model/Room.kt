@@ -12,6 +12,6 @@ data class Room(
     val description: String? = null
 ) : Parcelable {
     companion object {
-        const val collection_name = "Rooms"
+        const val collection_nameRoom = "Rooms"
     }
 }

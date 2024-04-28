@@ -12,7 +12,6 @@ import com.android.chatapp.ui.home.HomeActivity
 class AddChatActivity : BaseActivity<AddChatViewModel, ActivityChatAddBinding>(), Navigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chat_add)
 
         dataBinding.vmC = viewModel
 

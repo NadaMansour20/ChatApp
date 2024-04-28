@@ -1,6 +1,7 @@
 package com.android.chatapp.database
 
 import com.android.chatapp.model.AppUser
+import com.android.chatapp.model.Message
 import com.android.chatapp.model.Room
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -27,7 +28,7 @@ fun addUserToFirestore(
     onFailureListener: OnFailureListener
 ) {
 
-    val collection = getCollection(AppUser.CollectionName)
+    val collection = getCollection(AppUser.CollectionNameAppUser)
 
     //just document ,firebase that is enter id
     //document() , I am who entered the id
@@ -47,7 +48,7 @@ fun signInToFirebase(
     onFailureListener: OnFailureListener
 ) {
 
-    val collection = getCollection(AppUser.CollectionName)
+    val collection = getCollection(AppUser.CollectionNameAppUser)
     val document = collection.document(id)
 
     document.get().addOnSuccessListener(onSuccessListener).addOnFailureListener(onFailureListener)
@@ -58,7 +59,7 @@ fun add_Room(
     onSuccessListener: OnSuccessListener<Void>,
     onFailureListener: OnFailureListener
 ) {
-    val collection = getCollection(Room.collection_name)
+    val collection = getCollection(Room.collection_nameRoom)
     val document = collection.document()
 
     room.id = document.id
@@ -73,10 +74,32 @@ fun get_Room(
     onFailureListener: OnFailureListener
 ) {
 
-    val collecttion = getCollection(Room.collection_name)
+    val collecttion = getCollection(Room.collection_nameRoom)
 
     collecttion.get().addOnSuccessListener(onSuccessListener)
         .addOnFailureListener(onFailureListener)
+
+}
+
+fun get_message_Ref(room_id: String): CollectionReference {
+    val collectionRef = getCollection(Room.collection_nameRoom)
+    val roomRef = collectionRef.document(room_id)
+    return roomRef.collection(Message.CollectionNameMessage)
+}
+
+fun save_message(
+    message: Message,
+    onSuccessListener: OnSuccessListener<Void>,
+    onFailureListener: OnFailureListener
+) {
+
+    val message_collRef = get_message_Ref(message.room_id!!)
+    val document = message_collRef.document()
+
+    message.id = document.id
+    document.set(message).addOnSuccessListener(onSuccessListener)
+        .addOnFailureListener(onFailureListener)
+
 
 }
 

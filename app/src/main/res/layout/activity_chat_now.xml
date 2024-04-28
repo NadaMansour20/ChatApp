@@ -29,9 +29,10 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/room_name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Room Name"
+                    android:text="@{VmCN.room.name}"
                     android:textColor="@color/pink_dark"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/edittext_shape"
-                    android:hint="Type a massage"
+                    android:hint="@string/type_a_massage"
                     android:padding="13dp"
                     android:text="@={VmCN.Massage_send}"
                     app:layout_constraintBottom_toBottomOf="parent"
