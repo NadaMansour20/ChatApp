@@ -1,15 +1,15 @@
 <h1>ChatApp</h1>
--application allows users to start new chats to gether by group, register, and log in.<b1/>
--Users can create a new account by entering their personal information such as name, email, and password.<b1/>
--Existing users can log in using their email and password.<b1/>
+-application allows users to start new chats to gether by group, register, and log in.<br/>
+-Users can create a new account by entering their personal information such as name, email, and password.<br/>
+-Existing users can log in using their email and password.<br/>
 -After logging in, users can start a new chat with their friends.
 
 Key Features
 
 <h1>Technologies used</h1>
 
--firebase<b1/>
--MVVM<b1/>
+-firebase<br/>
+-MVVM<br/>
 
 <h1>Screen Chots</h1>
 -dark mode
