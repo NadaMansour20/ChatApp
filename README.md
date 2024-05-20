@@ -1,7 +1,7 @@
 <h1>ChatApp</h1>
 <b1>application allows users to start new chats to gether by group, register, and log in.</b1>
-<b1>Users can create a new account by entering their personal information such as name, email, and password.</b1
-<b1>Existing users can log in using their email and password.</b1
+<b1>Users can create a new account by entering their personal information such as name, email, and password.</b1>
+<b1>Existing users can log in using their email and password.</b1>
 After logging in, users can start a new chat with their friends.
 
 Key Features
@@ -36,8 +36,8 @@ Key Features
 
 ![WhatsApp Image 2024-05-20 (9)](https://github.com/NadaMansour20/ChatApp/assets/125664031/ce198112-986d-4dbb-ab26-c948d53c699e)
 
-![WhatsApp Image 2024-05-20 (11)](https://github.com/NadaMansour20/ChatApp/assets/125664031/89da332a-7808-45dd-995f-d6a152601525)
-
 ![WhatsApp Image 2024-05-20 (13)](https://github.com/NadaMansour20/ChatApp/assets/125664031/da3e8c0e-e21e-491c-957e-0e270f924ac6)
+
+![WhatsApp Image 2024-05-20 (11)](https://github.com/NadaMansour20/ChatApp/assets/125664031/89da332a-7808-45dd-995f-d6a152601525)
 
 ![WhatsApp Image 2024-05-20 (8)](https://github.com/NadaMansour20/ChatApp/assets/125664031/13d6e27c-2d3a-455e-a431-70134dba9447)
