@@ -7,8 +7,9 @@ After logging in, users can start a new chat with their friends.
 Key Features
 
 <h1>Technologies used</h1>
-<b1>firebase</b1
-<b1>MVVM</b1
+
+<b1>firebase</b1>
+<b1>MVVM</b1>
 
 <h1>Screen Chots</h1>
 -dark mode
