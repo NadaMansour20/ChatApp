@@ -4,8 +4,6 @@
 -Existing users can log in using their email and password.<br/>
 -After logging in, users can start a new chat with their friends.
 
-Key Features
-
 <h1>Technologies used</h1>
 
 -firebase<br/>
